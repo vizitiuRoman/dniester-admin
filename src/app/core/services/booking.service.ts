@@ -2,9 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { CrudHttpService } from '@services/crud-http.service';
-
 import { Booking } from '@models/booking.model';
 import { BOOKINGS_API } from '@constants/apis';
+
 import { environment } from '@environments/environment';
 
 @Injectable({
