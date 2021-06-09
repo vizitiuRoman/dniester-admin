@@ -2,6 +2,6 @@ version: '3.7'
 services:
     dniester-admin-panel:
         container_name: dniester-admin-panel
-        image: @dniester/admin-panel:latest
+        image: dniester/admin-panel:latest
         ports:
             - '9000:80'
