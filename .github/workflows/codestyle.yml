@@ -14,10 +14,10 @@ jobs:
                     node-version: '12.20.2'
             -   name: Install Dependencies
                 run: |
-                    npm install
+                    yarn
             -   name: Run Prettier
                 run: |
-                    node node_modules/prettier/index.js --write 'src/**/*.{js,ts,css}'
+                    yarn prettier
 
     format-check:
         name: Run Lint on codebase
@@ -30,7 +30,7 @@ jobs:
                     node-version: '12.20.2'
             -   name: Install Dependencies
                 run: |
-                    npm install
+                    yarn
             -   name: Run Lint
                 run: |
-                    node node_modules/tslint/bin/tslint --write 'src/**/*.{js,ts,css}'
+                    yarn lint
