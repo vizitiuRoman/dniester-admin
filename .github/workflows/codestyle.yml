@@ -1,0 +1,36 @@
+name: Codestyle
+
+on: [ pull_request ]
+
+jobs:
+    format:
+        name: Run Prettier on codebase
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout code
+                uses: actions/checkout@master
+            -   uses: actions/setup-node@v1
+                with:
+                    node-version: '12.20.2'
+            -   name: Install Dependencies
+                run: |
+                    npm install
+            -   name: Run Prettier
+                run: |
+                    npm run prettier
+
+    format-check:
+        name: Run Lint on codebase
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout code
+                uses: actions/checkout@master
+            -   uses: actions/setup-node@v1
+                with:
+                    node-version: '12.20.2'
+            -   name: Install Dependencies
+                run: |
+                    npm install
+            -   name: Run Lint
+                run: |
+                    npm run lint
