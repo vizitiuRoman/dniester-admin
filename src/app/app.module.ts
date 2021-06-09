@@ -13,7 +13,9 @@ import {
     NbLayoutModule,
     NbActionsModule,
     NbSidebarModule,
-    NbSidebarService, NbTreeGridModule, NbCardModule,
+    NbSidebarService,
+    NbTreeGridModule,
+    NbCardModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { EffectsModule } from '@ngrx/effects';
