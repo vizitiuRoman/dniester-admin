@@ -8,13 +8,13 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             -   name: Checkout code
-                uses: actions/checkout@main
+                uses: actions/checkout@master
             -   uses: actions/setup-node@v1
                 with:
                     node-version: '12.20.2'
             -   name: Install Dependencies
                 run: |
-                    npm install
+                    yarn
             -   name: Run Build Prod
                 run: |
-                    npm run build:prod
+                    yarn build:prod
