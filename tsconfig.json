@@ -29,6 +29,9 @@
       "@shared/*": [
         "src/app/share/*"
       ],
+      "@theme/*": [
+        "src/app/theme/*"
+      ],
       "@services/*": [
         "src/app/core/services/*"
       ],
