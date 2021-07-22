@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -10,14 +11,10 @@ import {
 } from '@nebular/auth';
 import {
     NbThemeModule,
-    NbLayoutModule,
-    NbActionsModule,
     NbSidebarModule,
     NbSidebarService,
-    NbTreeGridModule,
-    NbCardModule,
+    NbToastrModule, NbWindowModule, NbDialogModule, NbDatepickerModule, NbMenuModule,
 } from '@nebular/theme';
-import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { EffectsModule } from '@ngrx/effects';
 
 import { StoreModule } from '@ngrx/store';
@@ -26,6 +23,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ServicesComponent } from '@pages/services/services.component';
 import { environment } from '@environments/environment';
 import { TokenInterceptor } from '@interceptors/token.interceptor';
+import { ThemeModule } from '@theme/theme.module';
 
 import { reducers, metaReducers } from './store';
 import { AppComponent } from './app.component';
@@ -39,10 +37,17 @@ import { AppRoutingModule } from './app-routing.module';
         AppRoutingModule,
         BrowserAnimationsModule,
         NbThemeModule.forRoot({ name: 'default' }),
-        NbLayoutModule,
-        NbTreeGridModule,
-        NbCardModule,
-        NbEvaIconsModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        AppRoutingModule,
+        ThemeModule.forRoot(),
+        NbSidebarModule.forRoot(),
+        NbMenuModule.forRoot(),
+        NbDatepickerModule.forRoot(),
+        NbDialogModule.forRoot(),
+        NbWindowModule.forRoot(),
+        NbToastrModule.forRoot(),
+        FormsModule,
         NbAuthModule.forRoot({
             strategies: [
                 NbPasswordAuthStrategy.setup({
@@ -54,7 +59,7 @@ import { AppRoutingModule } from './app-routing.module';
 
                     baseEndpoint: environment.API_URL,
                     login: {
-                        endpoint: '/auth/company/login',
+                        endpoint: '/admin/auth/login',
                         redirect: {
                             success: '/home', // welcome page path
                             failure: null, // stay on the same page
@@ -62,14 +67,12 @@ import { AppRoutingModule } from './app-routing.module';
                     },
                     register: {
                         // ...
-                        endpoint: '/auth/company/register',
+                        endpoint: '/admin/auth/register',
                     },
                 }),
             ],
             forms: {},
         }),
-        NbActionsModule,
-        NbSidebarModule,
         StoreModule.forRoot(reducers, { metaReducers }),
         !environment.production ? StoreDevtoolsModule.instrument() : [],
         StoreDevtoolsModule.instrument({

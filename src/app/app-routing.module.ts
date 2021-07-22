@@ -43,18 +43,10 @@ const routes: Routes = [
         ],
     },
     {
-        path: 'home',
+        path: 'menu',
         loadChildren: () =>
-            import('./pages/services/services.module').then(
-                (m) => m.ServicesModule
-            ),
-        canActivate: [AuthGuard],
-    },
-    {
-        path: 'bookings',
-        loadChildren: () =>
-            import('./pages/bookings/bookings.module').then(
-                (m) => m.BookingsModule
+            import('./pages/pages.module').then(
+                (m) => m.PagesModule
             ),
         canActivate: [AuthGuard],
     },
