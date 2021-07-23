@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { EffectsModule } from '@ngrx/effects';
 
 import { ServiceEffects } from '@store/service/service.effects';
-import { GenericTableModule } from '@components/generic-table/generic-table.module';
 
 import { ServicesRoutingModule } from './services-routing.module';
 
@@ -13,7 +12,6 @@ import { ServicesRoutingModule } from './services-routing.module';
     imports: [
         CommonModule,
         ServicesRoutingModule,
-        GenericTableModule,
         EffectsModule.forFeature([ServiceEffects]),
     ],
 })

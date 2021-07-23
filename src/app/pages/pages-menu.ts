@@ -8,9 +8,9 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
-    title: 'Dashboard',
+    title: 'Staffs',
     icon: 'shake-outline',
-    link: '/menu/bookings',
+    link: '/menu/staffs',
     home: false,
   },
   {

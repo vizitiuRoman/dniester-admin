@@ -6,6 +6,6 @@ export interface CrudRepository<T extends BaseModel<ID>, ID> {
     update(id: ID, t: T): Observable<T>;
     findOne(id: ID): Observable<T>;
     findAll(): Observable<T[]>;
-    delete(id: ID): Observable<{ count: number }>;
-    deleteByIDS(ids: ID[]): Observable<{ count: number }>;
+    delete(id: ID): Observable<T>;
+    deleteByIDS(ids: ID[]): Observable<T[]>;
 }

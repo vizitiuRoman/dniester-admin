@@ -1,5 +1,9 @@
 export const SERVICES_API = {
-    default: 'services',
+    default: 'company/services',
+};
+
+export const STAFFS_API = {
+    default: 'company/staffs',
 };
 
 export const BOOKINGS_API = {

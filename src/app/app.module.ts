@@ -59,15 +59,15 @@ import { AppRoutingModule } from './app-routing.module';
 
                     baseEndpoint: environment.API_URL,
                     login: {
-                        endpoint: '/admin/auth/login',
+                        endpoint: '/company/auth/login',
                         redirect: {
-                            success: '/home', // welcome page path
+                            success: '/menu', // welcome page path
                             failure: null, // stay on the same page
                         },
                     },
                     register: {
                         // ...
-                        endpoint: '/admin/auth/register',
+                        endpoint: '/company/auth/register',
                     },
                 }),
             ],

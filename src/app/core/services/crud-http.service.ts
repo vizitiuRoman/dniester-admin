@@ -32,12 +32,12 @@ export abstract class CrudHttpService<T extends BaseModel<ID>, ID>
         return this.httpClient.get<T[]>(this.url);
     }
 
-    public delete(id: ID): Observable<{ count: number }> {
-        return this.httpClient.delete<{ count: number }>(this.url + '/' + id);
+    public delete(id: ID): Observable<T> {
+        return this.httpClient.delete<T>(this.url + '/' + id);
     }
 
-    public deleteByIDS(ids: ID[]): Observable<{ count: number }> {
-        return this.httpClient.post<{ count: number }>(this.url + '/delete', {
+    public deleteByIDS(ids: ID[]): Observable<T[]> {
+        return this.httpClient.post<T[]>(this.url + '/delete', {
             ids,
         });
     }

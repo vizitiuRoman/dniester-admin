@@ -14,7 +14,7 @@ export class ServiceService extends CrudHttpService<Service, string> {
     constructor(protected httpClient: HttpClient) {
         super(
             httpClient,
-            `${environment.API_URL}/${SERVICES_API.default}/company`
+            `${environment.API_URL}/${SERVICES_API.default}`
         );
     }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Store } from '@ngrx/store';
 
-import { GenericTableComponent } from '@components/generic-table/generic-table.component';
+import { GenericTableComponent } from '@theme/components/generic-table/generic-table.component';
 import { Service } from '@models/service.model';
 import { loadServices } from '@store/service/service.actions';
 import { State } from '@store/index';
@@ -11,9 +11,9 @@ import { selectAllServices } from '@store/service/service.selectors';
 @Component({
     selector: 'app-services',
     templateUrl:
-        '../../shared/components/generic-table/generic-table.component.html',
+        '../../theme/components/generic-table/generic-table.component.html',
     styleUrls: [
-        '../../shared/components/generic-table/generic-table.component.scss',
+        '../../theme/components/generic-table/generic-table.component.scss',
     ],
 })
 export class ServicesComponent
