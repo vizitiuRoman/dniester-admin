@@ -23,7 +23,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ServicesComponent } from '@pages/services/services.component';
 import { environment } from '@environments/environment';
 import { TokenInterceptor } from '@interceptors/token.interceptor';
-import { ThemeModule } from '@theme/theme.module';
 
 import { reducers, metaReducers } from './store';
 import { AppComponent } from './app.component';
@@ -40,7 +39,6 @@ import { AppRoutingModule } from './app-routing.module';
         BrowserAnimationsModule,
         HttpClientModule,
         AppRoutingModule,
-        ThemeModule.forRoot(),
         NbSidebarModule.forRoot(),
         NbMenuModule.forRoot(),
         NbDatepickerModule.forRoot(),

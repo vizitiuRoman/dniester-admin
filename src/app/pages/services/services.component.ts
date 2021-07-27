@@ -2,31 +2,22 @@ import { Component, OnInit } from '@angular/core';
 
 import { Store } from '@ngrx/store';
 
-import { GenericTableComponent } from '@theme/components/generic-table/generic-table.component';
-import { Service } from '@models/service.model';
 import { loadServices } from '@store/service/service.actions';
 import { State } from '@store/index';
 import { selectAllServices } from '@store/service/service.selectors';
 
 @Component({
     selector: 'app-services',
-    templateUrl:
-        '../../theme/components/generic-table/generic-table.component.html',
-    styleUrls: [
-        '../../theme/components/generic-table/generic-table.component.scss',
-    ],
+    templateUrl: './services.component.html',
+    styleUrls: ['./services.component.scss',],
 })
-export class ServicesComponent
-    extends GenericTableComponent<Service, string>
-    implements OnInit {
+export class ServicesComponent implements OnInit {
     constructor(private store: Store<State>) {
-        super();
         this.store.dispatch(loadServices());
     }
 
     ngOnInit(): void {
         this.store.select(selectAllServices).subscribe((data) => {
-            this.data = data;
         });
     }
 }

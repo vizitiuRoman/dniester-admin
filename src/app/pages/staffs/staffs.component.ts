@@ -19,9 +19,6 @@ export class StaffsComponent implements OnInit {
 
     ngOnInit(): void {
         this.store.select(selectAllStaffs).subscribe((data) => {
-            console.log(data);
-            console.log(data);
-            console.log(data);
         });
     }
 

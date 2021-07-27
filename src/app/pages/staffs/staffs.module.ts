@@ -10,13 +10,14 @@ import { StaffsComponent } from './staffs.component';
 
 
 @NgModule({
-  declarations: [
-    StaffsComponent
-  ],
-  imports: [
-    CommonModule,
-    StaffsRoutingModule,
-      EffectsModule.forFeature([StaffEffects]),
-  ]
+    declarations: [
+        StaffsComponent,
+    ],
+    imports: [
+        CommonModule,
+        StaffsRoutingModule,
+        EffectsModule.forFeature([StaffEffects]),
+    ],
 })
-export class StaffsModule { }
+export class StaffsModule {
+}
