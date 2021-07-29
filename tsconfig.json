@@ -41,6 +41,9 @@
             "@models/*": [
                 "src/app/shared/models/*"
             ],
+            "@enums/*": [
+                "src/app/shared/enums/*"
+            ],
             "@components/*": [
                 "src/app/shared/components/*"
             ],
