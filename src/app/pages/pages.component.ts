@@ -1,13 +1,44 @@
-import { Component } from '@angular/core';
-
-import { MENU_ITEMS } from './pages-menu';
+import { Component, ViewChild } from '@angular/core';
+import { SidebarComponent } from '@syncfusion/ej2-angular-navigations';
 
 @Component({
   selector: 'app-pages',
   styleUrls: ['pages.component.scss'],
-  template: `<router-outlet></router-outlet>`,
+  templateUrl: `./pages.component.html`,
 })
 export class PagesComponent {
+    @ViewChild('sideBar')
+    public sideBar!: SidebarComponent;
+    public showBackdrop = false;
+    public closeOnDocumentClick = false;
 
-  menu = MENU_ITEMS;
+    constructor() {
+        document.body.classList.add('main-page');
+        // if (Browser.isDevice) {
+        //     this.showBackdrop = true;
+        //     this.closeOnDocumentClick = true;
+        // }
+    }
+
+    public ngAfterViewInit(): void {
+        // if (Browser.isDevice) {
+        //     document.querySelector('.planner-header').classList.add('device-header');
+        //     document.querySelector('.planner-wrapper').classList.add('device-wrapper');
+        // }
+    }
+
+    public btnClick(): void {
+        this.sideBar.show();
+    }
+
+    public onItemClick(args: any): void {
+        // if (Browser.isDevice) {
+        //     this.sideBar.hide();
+        // }
+        const elements: HTMLElement[] = args.currentTarget.parentElement.querySelectorAll('.active-item');
+        elements.forEach(element => {
+            if (element.classList.contains('active-item')) { element.classList.remove('active-item'); }
+        });
+        args.currentTarget.classList.add('active-item');
+    }
 }

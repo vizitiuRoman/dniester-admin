@@ -13,13 +13,18 @@ const routes: Routes = [{
             .then((m) => m.ServicesModule)
     },
     {
+      path: 'bookings',
+        loadChildren: () => import('@pages/bookings/bookings.module')
+            .then((m) => m.BookingsModule)
+    },
+    {
       path: 'staffs',
         loadChildren: () => import('@pages/staffs/staffs.module')
             .then((m) => m.StaffsModule)
     },
     {
       path: '',
-      redirectTo: 'services',
+      redirectTo: 'staffs',
       pathMatch: 'full',
     },
   ],
