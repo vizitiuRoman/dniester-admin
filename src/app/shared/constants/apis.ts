@@ -7,7 +7,7 @@ export const STAFFS_API = {
 };
 
 export const BOOKINGS_API = {
-    default: 'bookings',
+    default: 'company/bookings',
 };
 
 export const DATA_TIME_FORMAT = '';
