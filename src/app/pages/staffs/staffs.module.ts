@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { EffectsModule } from '@ngrx/effects';
-import { StaffEffects } from '@store/staff/staff.effects';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
-import { NbButtonGroupModule, NbButtonModule, NbDialogModule } from '@nebular/theme';
+import { NbButtonGroupModule, NbButtonModule, NbDialogModule, NbInputModule } from '@nebular/theme';
+
+import { StaffEffects } from '@store/staff/staff.effects';
 
 import { AddStaffComponent } from './add-staff/add-staff.component';
 import { EditStaffComponent } from './edit-staff/edit-staff.component';
@@ -26,6 +28,8 @@ import { StaffsComponent } from './staffs.component';
         DropDownListModule,
         NbButtonModule,
         NbButtonGroupModule,
+        ReactiveFormsModule,
+        NbInputModule,
     ],
 })
 export class StaffsModule {

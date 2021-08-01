@@ -1,1 +1,9 @@
-<p>add-staff works!</p>
+<form [formGroup]='form' class='form-width'>
+
+    <input type="text" nbInput fullWidth fieldSize="small" placeholder="Input"
+           [formControlName]='"name"'
+    >
+
+</form>
+
+<button nbButton (click)='close()'>create</button>

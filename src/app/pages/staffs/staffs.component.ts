@@ -33,7 +33,8 @@ export class StaffsComponent implements OnInit {
     public onAddStaff(): void {
         const ref = this.dialogService.open(AddStaffComponent);
         ref.onClose.subscribe(
-            () => {
+            (form: Staff) => {
+                console.log(form);
             }
         )
     }
